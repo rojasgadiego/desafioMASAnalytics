@@ -1,15 +1,12 @@
 <template>
   <div class="login-container">
-    
     <div class="login-card">
-      <!-- Logo y nombre de la aplicación -->
-      <div class="brand-logo">
+      <!-- Logo centrado -->
+      <div class="brand-logo-centered">
         <div class="colibri-icon">
-          <div class="hummingbird"></div>
+          <img :src="require('@/assets/logo-mas-analytics-color.svg')" alt="Logo MasAnalitycs" />
         </div>
-        <h1 class="brand-name">MasAnalitycs</h1>
       </div>
-      <h2 class="login-title">Iniciar Sesión</h2>
       
       <form @submit.prevent="handleSubmit" class="login-form">
         <!-- Alerta de error -->
@@ -209,7 +206,7 @@ export default {
   background-color: #f9f5ff;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(to bottom right, #f0f6ff, #fef4ff);
+  background-image: linear-gradient(to bottom right, #f0f6ff, #F2F2F2);
 }
 
 /* Estilos para la tarjeta de login */
@@ -217,44 +214,51 @@ export default {
   width: 100%;
   max-width: 450px;
   padding: 30px;
-  background-color: white;
+  background-color: #161840;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
   border: 1px solid rgba(190, 150, 230, 0.1);
   backdrop-filter: blur(5px);
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95));
+  color: white; /* Color de texto global para el card */
 }
 
-/* Logo y nombre de la florería */
-.brand-logo {
+/* Logo centrado */
+.brand-logo-centered {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Centra horizontalmente */
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .colibri-icon {
-  width: 70px;
-  height: 70px;
+  width: 220px; /* Un poco más grande para mejor visibilidad */
+  height: auto; /* Mantiene la proporción */
   margin-bottom: 10px;
   position: relative;
 }
 
+.colibri-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 .brand-name {
   font-family: 'Pacifico', cursive, sans-serif;
-  color: #743cfa;
+  color: white; /* Cambiado a blanco */
   font-size: 2.5rem;
   margin: 0;
-  text-shadow: 1px 1px 2px rgba(116, 60, 250, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center; /* Texto centrado */
 }
 
 .login-title {
   text-align: center;
   margin-bottom: 25px;
-  color: #4a4a4a;
+  color: white; /* Cambiado a blanco */
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -274,7 +278,7 @@ export default {
 label {
   margin-bottom: 8px;
   font-weight: 600;
-  color: #5d5d5d;
+  color: white; /* Cambiado a blanco */
   font-size: 0.95rem;
   text-align: left;
 }
@@ -343,26 +347,29 @@ input:focus {
   margin-bottom: 0;
   font-size: 0.9rem;
   font-weight: normal;
+  color: white; /* Cambiado a blanco */
 }
 
 /* Estilos para cuentas de demostración */
 .demo-accounts {
-  background-color: #f8f4ff;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
   border-radius: 6px;
   padding: 12px;
-  border: 1px dashed #c5b3ff;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  color: white; /* Cambiado a blanco */
 }
 
 .demo-accounts p {
   margin: 0 0 8px 0;
   font-weight: 600;
-  color: #5d5d5d;
+  color: white; /* Cambiado a blanco */
   font-size: 0.9rem;
 }
 
 .account-item {
   margin-bottom: 5px;
   font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9); /* Ligeramente menos brillante para mejor legibilidad */
 }
 
 .account-item:last-child {
@@ -371,7 +378,7 @@ input:focus {
 
 .login-button {
   padding: 12px;
-  background-color: #743cfa;
+  background-color: #4B64F2;
   color: white;
   border: none;
   border-radius: 6px;
@@ -383,16 +390,16 @@ input:focus {
   justify-content: center;
   align-items: center;
   height: 48px;
-  box-shadow: 0 4px 8px rgba(116, 60, 250, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .login-button:hover:not(:disabled) {
   background-color: #6230e0;
-  box-shadow: 0 6px 12px rgba(116, 60, 250, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .login-button:disabled {
-  background-color: #b9a4e6;
+  background-color: rgba(255, 255, 255, 0.3);
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -413,16 +420,16 @@ input:focus {
 }
 
 .alert-error {
-  background-color: #ffebee;
+  background-color: rgba(244, 67, 54, 0.2); /* Fondo rojo semi-transparente */
   border-left: 4px solid #f44336;
-  color: #d32f2f;
+  color: white; /* Texto blanco para alertas en fondo oscuro */
   padding: 12px 15px;
   border-radius: 4px;
   margin-bottom: 5px;
 }
 
 .error-message {
-  color: #f44336;
+  color: #ff7b7b; /* Rojo más claro para mejor visibilidad */
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;
@@ -439,19 +446,19 @@ input:focus {
 }
 
 .additional-links a {
-  color: #743cfa;
+  color: #a494ff; /* Púrpura más claro para mejor visibilidad en fondo oscuro */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .additional-links a:hover {
-  color: #6230e0;
+  color: white;
   text-decoration: underline;
 }
 
 .divider {
   margin: 0 10px;
-  color: #ccc;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 480px) {
@@ -469,10 +476,6 @@ input:focus {
   
   input, .login-button {
     padding: 10px;
-  }
-  
-  .flower {
-    opacity: 0.4;
   }
 }
 </style>
