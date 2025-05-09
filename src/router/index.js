@@ -5,6 +5,8 @@ import store from '../store'
 import Login from '@/views/LoginView.vue'
 import Dashboard from '@/views/DashboardView.vue'
 import Llamadas from '@/views/LlamadasView.vue'
+import Monitoreo from '@/views/MonitoreoView.vue'
+import Agentes from '@/views/AgentesView.vue'
 
 const routes = [
   {
@@ -37,7 +39,26 @@ const routes = [
       requiresAuth: true,
       title: 'Llamadas'
     }
+  },
+  {
+    path: '/monitoreo',
+    name: 'Monitoreo',
+    component: Monitoreo,
+    meta: {
+      requiresAuth: true,
+      title: 'Monitoreo'
+    }
+  },
+  {
+    path: '/agentes',
+    name: 'Agemtes',
+    component: Agentes,
+    meta: {
+      requiresAuth: true,
+      title: 'Agentes'
+    }
   }
+
 ]
 
 const router = createRouter({
