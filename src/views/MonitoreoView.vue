@@ -168,6 +168,7 @@
           Siguiente
         </button>
       </div>
+
     </div>
   </MainLayout>
 </template>
@@ -440,7 +441,6 @@ export default {
 .log-llamadas-container {
   padding: 0;
   position: relative;
-  min-height: 100vh;
   background-color: #f5f7fb;
 }
 
@@ -524,7 +524,7 @@ export default {
   align-items: center;
   gap: 5px;
   padding: 8px 12px;
-  background-color: #4B64F2;
+  background-color: #161840;
   color: white;
   border: none;
   border-radius: 4px;
@@ -533,7 +533,7 @@ export default {
 }
 
 .refresh-button:hover {
-  background-color: #3a50d8;
+  background-color: #125773;
 }
 
 /* Barra de estadísticas */
@@ -723,8 +723,9 @@ export default {
 }
 
 .pagination button:hover:not(:disabled) {
-  background-color: #f5f7fb;
-  border-color: #bbb;
+  background-color: #125773;
+  color: white;
+  border-color: #125773;
 }
 
 .pagination button:disabled {
@@ -742,9 +743,9 @@ export default {
 }
 
 .page-numbers button.active {
-  background-color: #4B64F2;
+  background-color: #161840;
   color: white;
-  border-color: #4B64F2;
+  border-color: #161840;
 }
 
 /* Media queries para responsividad */

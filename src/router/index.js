@@ -28,7 +28,7 @@ const routes = [
     component: Dashboard,
     meta: {
       requiresAuth: true,
-      title: 'Panel Principal'
+      title: 'Dashboard'
     }
   },
   {

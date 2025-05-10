@@ -164,6 +164,7 @@
             </form>
           </div>
         </div>
+
       </div>
     </MainLayout>
   </template>
@@ -396,7 +397,6 @@
   /* Contenedor principal */
   .agentes-container {
     padding: 0;
-    min-height: 100vh;
     background-color: #f5f7fb;
     display: flex;
     flex-direction: column;
@@ -462,7 +462,7 @@
     align-items: center;
     gap: 5px;
     padding: 8px 12px;
-    background-color: #4B64F2;
+    background-color: #161840;
     color: white;
     border: none;
     border-radius: 4px;
@@ -471,7 +471,7 @@
   }
   
   .refresh-button:hover {
-    background-color: #3a50d8;
+    background-color: #125773;
   }
   
   /* Contenido principal dividido */
@@ -697,7 +697,7 @@
   
   .submit-button {
     padding: 10px 20px;
-    background-color: #4B64F2;
+    background-color: #161840;
     color: white;
     border: none;
     border-radius: 4px;
@@ -711,7 +711,7 @@
   }
   
   .submit-button:hover:not(:disabled) {
-    background-color: #3a50d8;
+    background-color: #125773;
   }
   
   .submit-button:disabled {

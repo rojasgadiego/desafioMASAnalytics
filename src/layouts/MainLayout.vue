@@ -587,12 +587,12 @@
 }
 
 .sidebar-nav a:hover {
-  background-color: #05daf279;
+  background-color: #05daf246;
   color: #ffffff;
 }
 
 .sidebar-nav a.active {
-  background-color:#05daf279;
+  background-color:#05daf246;
   color: #ffffff;
   font-weight: 500;
 }
@@ -762,13 +762,13 @@
 
 .top-header {
  height: 64px;
- background-color: #161840;
+ background-color: #ffffff;
  padding: 0 24px;
  display: flex;
  align-items: center;
  justify-content: space-between;
  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
- border-bottom: 3px solid #05DBF2;
+ border-bottom: 3px solid #125773;
  flex-shrink: 0;
 }
 
@@ -792,7 +792,7 @@
 .breadcrumb {
  font-size: 16px;
  font-weight: 500;
- color: #ffffff;
+ color: #000000;
 }
 
 .header-actions {

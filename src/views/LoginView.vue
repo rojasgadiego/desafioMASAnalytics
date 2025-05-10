@@ -1,5 +1,6 @@
 <template>
   <div class="login-container">
+
     <div class="login-card">
       <!-- Logo centrado -->
       <div class="brand-logo-centered">
@@ -91,6 +92,7 @@
         <router-link to="/">Registrarse</router-link>
       </div>
     </div>
+    
   </div>
 </template>
 
