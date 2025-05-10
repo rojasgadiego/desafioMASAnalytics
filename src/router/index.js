@@ -7,6 +7,7 @@ import Dashboard from '@/views/DashboardView.vue'
 import Llamadas from '@/views/LlamadasView.vue'
 import Monitoreo from '@/views/MonitoreoView.vue'
 import Agentes from '@/views/AgentesView.vue'
+import ProfileConfigView from '@/views/ConfiguracionView.vue'
 
 const routes = [
   {
@@ -56,6 +57,15 @@ const routes = [
     meta: {
       requiresAuth: true,
       title: 'Agentes'
+    }
+  },
+  {
+    path: '/configuracion',
+    name: 'Configuración',
+    component: ProfileConfigView,
+    meta: {
+      requiresAuth: true,
+      title: 'Configuración'
     }
   }
 

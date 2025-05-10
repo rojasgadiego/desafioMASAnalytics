@@ -279,68 +279,12 @@
         icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>',
         roles: [] // Disponible para todos los roles
       },
-        // { 
-        //   name: 'Ventas', 
-        //   path: '/ventas', 
-        //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM12 8v8m-4-4h8"></path></svg>',
-        //   roles: ['admin', 'usuario'], // Accesible para administradores y vendedores
-        //   submenu: [
-        //     { 
-        //       name: 'Todas las Ventas', 
-        //       path: '/ventas', 
-        //       icon: '',
-        //       roles: ['admin', 'usuario']
-        //     },
-        //     { 
-        //       name: 'Ventas Individuales', 
-        //       path: '/ventas/individuales', 
-        //       icon: '',
-        //       roles: ['admin', 'usuario']
-        //     },
-        //     { 
-        //       name: 'Ventas de Ramos', 
-        //       path: '/ventas/ramos', 
-        //       icon: '',
-        //       roles: ['admin', 'usuario']
-        //     },
-        //     { 
-        //       name: 'Nueva Venta', 
-        //       path: '/ventas/nueva', 
-        //       icon: '',
-        //       roles: ['admin', 'usuario']
-        //     }
-        //   ]
-        // },
-        // { 
-        //   name: 'Inventario', 
-        //   path: '/inventory', 
-        //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>',
-        //   roles: ['admin', 'editor', 'usuario']
-        // },
-        // { 
-        //   name: 'Personal', 
-        //   path: '/personal', 
-        //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
-        //   roles: ['admin'] 
-        // },
-        // { 
-        //   name: 'Facturas', 
-        //   path: '/invoice', 
-        //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>',
-        //   roles: ['admin', 'editor', 'usuario']
-        // },
-        // { 
-        //   name: 'Reportes', 
-        //   path: '/reports', 
-        //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>',
-        //   roles: ['admin', 'usuario']
-        // },
-        // { 
-        //   name: 'Configuración', 
-        //   path: '/settings', 
-        //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>',
-        //   roles: ['admin']
-        // }
+      { 
+        name: 'Configuración', 
+        path: '/configuracion', 
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>',
+        roles: [] // Disponible para todos los roles
+      },
       ]
        // Filtrar menú según los roles del usuario
        const filteredMenuItems = computed(() => {
