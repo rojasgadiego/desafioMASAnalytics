@@ -28,3 +28,11 @@ App creada con VueJS 3.2.13, con librerías propias de Vue para manejar estados 
 "vue-router": "^4.5.1" - rutas
 "vuex": "^4.1.0" - estados
 ```
+
+## Inicio de Sesión
+```
+Cuentas de demostración (Visibles en el formulario Login):
+
+Admin: admin@admin.com / admin123
+Usuario: usuario@usuario.com / usuario123
+```
