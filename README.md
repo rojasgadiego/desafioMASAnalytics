@@ -5,7 +5,7 @@
 git clone https://github.com/rojasgadiego/desafioMASAnalytics.git
 ```
 
-## instalacion de dependencias
+## instalación de dependencias
 ```
 npm install o npm i
 ```
