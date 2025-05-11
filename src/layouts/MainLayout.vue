@@ -62,23 +62,17 @@ export default {
     const router = useRouter()
     const route = useRoute()
     
-    // Estado del sidebar - siempre inicia colapsado por defecto
     const isSidebarCollapsed = ref(true)
     
-    // Variable para controlar el comportamiento del sidebar
     const autoCollapseEnabled = ref(true)
     
-    // Detectar si estamos en un dispositivo móvil
     const isMobile = ref(false)
     
-    // Temporizador para el colapso automático
     let collapseTimer = null
     
-    // Función para detectar si estamos en un dispositivo móvil
     const checkMobile = () => {
       isMobile.value = window.innerWidth <= 768
       
-      // Si cambiamos a móvil, desactivar el auto-colapso
       if (isMobile.value) {
         autoCollapseEnabled.value = false
       } else {
@@ -86,28 +80,23 @@ export default {
       }
     }
     
-    // Función específica para cerrar sidebar en móviles
     const closeMobileSidebar = () => {
       if (isMobile.value) {
         isSidebarCollapsed.value = true;
       }
     }
     
-    // Escuchar cambios en el tamaño de la ventana
     onMounted(() => {
       checkMobile()
       window.addEventListener('resize', checkMobile)
       
-      // Recuperar el estado del sidebar del almacenamiento local (si existe)
       const savedState = localStorage.getItem('sidebarState')
       if (savedState) {
         isSidebarCollapsed.value = savedState === 'collapsed'
       }
       
-      // Manejar cambios de enfoque de ventana para asegurar consistencia
       window.addEventListener('focus', () => {
         if (autoCollapseEnabled.value && !isMobile.value) {
-          // Colapsar después de un tiempo cuando la ventana recupera el foco
           clearTimeout(collapseTimer)
           collapseTimer = setTimeout(() => {
             isSidebarCollapsed.value = true
@@ -115,7 +104,6 @@ export default {
         }
       })
       
-      // Asegurar que el sidebar se colapsa automáticamente después de cargar
       if (autoCollapseEnabled.value && !isMobile.value) {
         clearTimeout(collapseTimer)
         collapseTimer = setTimeout(() => {
@@ -123,7 +111,6 @@ export default {
         }, 2000)
       }
       
-      // Añadir listener para clicks en el documento (cerrar al hacer clic fuera)
       document.addEventListener('click', (e) => {
         if (isMobile.value && !isSidebarCollapsed.value) {
           // Verificar si el clic fue fuera de la barra lateral
@@ -153,7 +140,6 @@ export default {
           isSidebarCollapsed.value = true;
         } 
         // En dispositivos no móviles, permitir que el sidebar permanezca abierto
-        // brevemente después de la navegación antes de colapsarse automáticamente
         else if (autoCollapseEnabled.value) {
           clearTimeout(collapseTimer)
           collapseTimer = setTimeout(() => {

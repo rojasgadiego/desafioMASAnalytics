@@ -84,7 +84,6 @@ router.beforeEach(async (to, from, next) => {
   const requiresGuest = to.matched.some(record => record.meta.requiresGuest)
   
   // Comprobar si el usuario está autenticado
-  // Primero verificamos con el estado del store
   let isAuthenticated = store.getters['isAuthenticated']
   
   // Si no está autenticado según el store global, verificamos el módulo auth
@@ -104,16 +103,13 @@ router.beforeEach(async (to, from, next) => {
   
   // Decidir la navegación basada en la autenticación y los requisitos de la ruta
   if (requiresAuth && !isAuthenticated) {
-    // Ruta protegida y no autenticado - redirigir a login
     next({
       path: '/login',
       query: { redirect: to.fullPath }
     })
   } else if (requiresGuest && isAuthenticated) {
-    // Ruta solo para invitados pero está autenticado - redirigir a dashboard
     next({ path: '/dashboard' })
   } else {
-    // Navegación normal
     next()
   }
 })
