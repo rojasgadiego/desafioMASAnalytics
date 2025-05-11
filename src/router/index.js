@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import store from '../store'
-
-// Importa las vistas/páginas
 import Login from '@/views/LoginView.vue'
 import Dashboard from '@/views/DashboardView.vue'
 import Llamadas from '@/views/LlamadasView.vue'
