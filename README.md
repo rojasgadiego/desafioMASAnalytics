@@ -17,7 +17,8 @@ npm run serve
 
 ## Enfoque del proyecto
 ```
-En cuanto al proyecto, quise que tuviera apariencia de una 'aplicación web' y no el de una página web (en realidad que no tuviera apariencia de página informativa).
+En cuanto al proyecto, quise que tuviera apariencia de una 'aplicación web' y no el de una página web 
+(en realidad que no tuviera apariencia de página informativa).
 Quería crear algo intuitivo y de fácil navegación.
 ```
 
