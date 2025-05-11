@@ -1,7 +1,7 @@
 <template>
     <MainLayout>
       <div class="agentes-container">
-        <!-- Encabezado y controles principales -->
+
         <div class="page-header">
           <h1 class="page-title">Gestión de Agentes</h1>
           <div class="controls">
@@ -16,7 +16,6 @@
           </div>
         </div>
         
-        <!-- Contenido principal dividido en dos columnas -->
         <div class="main-content">
           <!-- Columna izquierda: Tabla de agentes existentes -->
           <div class="table-section">
@@ -180,12 +179,11 @@
     },
     
     setup() {
-      // Estado para la lista de agentes
+
       const agentes = ref([]);
       const filteredAgentes = ref([]);
       const searchQuery = ref('');
       
-      // Estado para el formulario
       const formData = reactive({
         id: null,
         nombre: '',
@@ -194,18 +192,15 @@
         activo: true
       });
       
-      // Estado para errores del formulario
       const formErrors = reactive({
         nombre: '',
         script: '',
         voz: ''
       });
       
-      // Estado para la UI
       const isSubmitting = ref(false);
       const editMode = ref(false);
       
-      // Cargar datos iniciales simulados
       const fetchAgentes = () => {
         // Simulamos una carga desde una API
         setTimeout(() => {
@@ -234,16 +229,14 @@
         );
       };
       
-      // Validar formulario
+     
       const validateForm = () => {
         let isValid = true;
         
-        // Resetear errores
         formErrors.nombre = '';
         formErrors.script = '';
         formErrors.voz = '';
         
-        // Validar nombre
         if (!formData.nombre.trim()) {
           formErrors.nombre = 'El nombre del agente es obligatorio';
           isValid = false;
@@ -252,7 +245,6 @@
           isValid = false;
         }
         
-        // Validar script
         if (!formData.script.trim()) {
           formErrors.script = 'El script/prompt es obligatorio';
           isValid = false;
@@ -261,7 +253,6 @@
           isValid = false;
         }
         
-        // Validar voz
         if (!formData.voz) {
           formErrors.voz = 'Debe seleccionar una voz para el agente';
           isValid = false;
@@ -270,7 +261,6 @@
         return isValid;
       };
       
-      // Enviar formulario
       const submitForm = async () => {
         if (!validateForm()) return;
         
@@ -317,7 +307,6 @@
         }
       };
       
-      // Resetear formulario
       const resetForm = () => {
         formData.id = null;
         formData.nombre = '';
@@ -327,12 +316,10 @@
         editMode.value = false;
       };
       
-      // Ver detalles del agente
       const verAgente = (agente) => {
         alert(`Detalles del agente: ${agente.nombre}\n\nScript/Prompt:\n${agente.script}\n\nVoz: ${agente.voz}\nEstado: ${agente.activo ? 'Activo' : 'Inactivo'}`);
       };
       
-      // Editar agente
       const editarAgente = (agente) => {
         formData.id = agente.id;
         formData.nombre = agente.nombre;
@@ -341,24 +328,20 @@
         formData.activo = agente.activo;
         editMode.value = true;
         
-        // Hacer scroll al formulario en dispositivos móviles
         if (window.innerWidth <= 768) {
           document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
         }
       };
       
-      // Cancelar edición
       const cancelEdit = () => {
         resetForm();
       };
       
-      // Cambiar estado del agente (activar/desactivar)
       const toggleAgenteStatus = (agente) => {
         const index = agentes.value.findIndex(a => a.id === agente.id);
         if (index !== -1) {
           agentes.value[index].activo = !agentes.value[index].activo;
           
-          // También actualizar en la lista filtrada
           const filteredIndex = filteredAgentes.value.findIndex(a => a.id === agente.id);
           if (filteredIndex !== -1) {
             filteredAgentes.value[filteredIndex].activo = agentes.value[index].activo;
@@ -394,7 +377,6 @@
   </script>
   
   <style scoped>
-  /* Contenedor principal */
   .agentes-container {
     padding: 0;
     background-color: #f5f7fb;
@@ -402,7 +384,6 @@
     flex-direction: column;
   }
   
-  /* Barra superior con línea inferior */
   .top-bar {
     background-color: #161840;
     width: 100%;
@@ -415,16 +396,14 @@
     z-index: 10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     flex-shrink: 0;
-    border-bottom: 3px solid #05DBF2; /* Línea turquesa */
+    border-bottom: 3px solid #05DBF2;
   }
   
-  /* Contenedor del logo */
   .brand-logo-container {
     display: flex;
     align-items: center;
   }
   
-  /* Icono/Logo */
   .colibri-icon {
     width: 70px;
     height: 40px;
@@ -436,7 +415,6 @@
     object-fit: contain;
   }
   
-  /* Encabezado de página */
   .page-header {
     padding: 20px 24px;
     display: flex;
@@ -482,7 +460,6 @@
     padding: 0 24px 24px;
   }
   
-  /* Secciones comunes */
   .table-section, .form-section {
     background-color: white;
     border-radius: 8px;
@@ -494,7 +471,7 @@
   
   .table-section {
     flex: 1;
-    min-width: 0; /* Para evitar que la tabla rompa el layout */
+    min-width: 0; 
   }
   
   .form-section {
@@ -516,7 +493,6 @@
     margin: 0;
   }
   
-  /* Búsqueda */
   .search-container {
     position: relative;
   }
@@ -529,7 +505,6 @@
     width: 240px;
   }
   
-  /* Tabla de agentes */
   .tabla-container {
     overflow-x: auto;
     flex: 1;
@@ -590,7 +565,6 @@
     color: #d32f2f;
   }
   
-  /* Botones de acción */
   .actions-cell {
     white-space: nowrap;
   }

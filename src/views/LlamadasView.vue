@@ -40,7 +40,7 @@
       <!-- Modal para Llamada Individual -->
       <call-modal
         v-model="showIndividualModal"
-        title="Nueva Llamada Individual"
+        title="Generar llamada individual"
         confirm-text="Iniciar Llamada"
         :disable-confirm="!llamadaIndividualValida"
         @confirm="realizarLlamadaIndividual"
@@ -54,7 +54,7 @@
       <!-- Modal para Llamadas Masivas -->
       <call-modal
         v-model="showMasivasModal"
-        title="Nueva Campaña de Llamadas"
+        title="Generar llamadas masivas"
         confirm-text="Iniciar Campaña"
         :disable-confirm="!llamadaMasivaValida"
         @confirm="realizarLlamadasMasivas"
@@ -139,7 +139,6 @@ export default {
       console.log('Iniciando campaña de llamadas:', llamadaMasiva)
       alert('Campaña de llamadas iniciada correctamente')
       
-      // Reiniciar formulario y cerrar modal
       Object.assign(llamadaMasiva, {
         nombre: '',
         segmento: '',
